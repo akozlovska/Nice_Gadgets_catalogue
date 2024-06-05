@@ -1,0 +1,89 @@
+@import "../../styles/utils";
+
+.ProductDetailsImages {
+  flex-shrink: 1;
+  display: flex;
+  gap: 16px;
+
+  @include onSmallScreen {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__all-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 81px;
+    height: 464px;
+    overflow-y: scroll;
+
+    @include onMediumScreen {
+      height: 100%;
+      width: 35px;
+      flex-shrink: 0;
+      gap: 8px;
+    }
+
+    @include onSmallScreen {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      height: 48px;
+      overflow-y: auto;
+      overflow-x: scroll;
+    }
+  }
+
+  &__image-wrapper {
+    height: 82px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $color-elements;
+    background-color: inherit;
+
+    &--selected {
+      border-color: $color-primary;
+    }
+
+    @include onMediumScreen {
+      height: 35px;
+    }
+
+    @include onSmallScreen {
+      width: 48px;
+      height: 100%;
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: contain;
+    @include square(64px);
+
+    @include onMediumScreen {
+      @include square(100%);
+    }
+  }
+
+  &__displayed-image-wrapper {
+    overflow: hidden;
+    @include square(464px);
+    padding: 11px;
+
+    @include onMediumScreen {
+      @include square(287px);
+    }
+
+    @include onSmallScreen {
+      width: 100%;
+    }
+  }
+
+  &__displayed-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

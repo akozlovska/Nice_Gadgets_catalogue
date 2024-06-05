@@ -1,0 +1,84 @@
+@import "../../styles/utils";
+
+.footer {
+  background-color: $color-white;
+  box-shadow: 0 -1px 0 0 $color-elements;
+
+  &__content {
+    width: 100%;
+    max-width: 1136px;
+    padding-block: 32px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onSmallScreen {
+      flex-direction: column;
+      padding-inline: 16px;
+      gap: 32px;
+    }
+  
+    @include onMediumScreen {
+      padding-inline: 24px;
+    }
+  
+    @include onLargeScreen {
+      padding-inline: 32px;
+      margin: 0 auto;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 12px;
+    @include onSmallScreen {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 89px;
+  }
+
+  &__link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 106px;
+
+    @include onSmallScreen {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include onMediumScreen {
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    @include text-uppercase;
+    color: $color-secondary;
+    text-decoration: none;
+    @include hover(color, $color-primary);
+
+    @include onSmallScreen {
+      font-size: 10px;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    @include onSmallScreen {
+      align-self: center;
+    }
+  }
+
+  &__button-text {
+    @include text-small;
+    color: $color-secondary;
+  }
+}

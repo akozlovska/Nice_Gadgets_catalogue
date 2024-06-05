@@ -1,0 +1,65 @@
+@import "../../styles/utils";
+
+.HomePage {
+  &__title {
+    padding-top: 32px;
+    margin-bottom: 56px;
+
+    @include onMediumScreen {
+      padding-top: 8px;
+      margin-bottom: 32px;
+    }
+
+    @include onSmallScreen {
+      padding-top: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @include onMediumScreen {
+        margin-bottom: 64px;
+      }
+
+      @include onSmallScreen {
+        margin-bottom: 56px;
+      }
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 24px;
+  }
+}
+
+.categories {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
+  @include onSmallScreen {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__link-image {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  &__text {
+    color: $color-secondary;
+  }
+}

@@ -1,21 +1,41 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { Sidebar } from './components/Sidebar';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import './App.scss';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
+const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.classList.add('lock-scroll');
+    } else {
+      document.body.classList.remove('lock-scroll');
+    }
+  }, [isSidebarOpen]);
 
-export const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className="App">
+      <ScrollRestoration />
+
+      <Header
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
+
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+
+      <main className="main">
+        <div className="container">
+          <Outlet />
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };
+
+export default App;

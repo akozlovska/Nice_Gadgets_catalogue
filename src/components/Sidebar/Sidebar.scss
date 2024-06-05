@@ -1,0 +1,49 @@
+@import "../../styles/utils";
+@import "../../styles/blocks/icon";
+
+.Sidebar {
+  position: relative;
+  z-index: 200;
+  display: none;
+
+  @include onSmallScreen {
+    display: block;
+  }
+
+  &__window {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    width: 100%;
+    padding-top: 24px;
+    position: fixed;
+    right: 0;
+    top: 49px;
+    bottom: 0;
+    background-color: $color-white;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(0);
+    }
+  }
+
+  &__buttons {
+    height: 64px;
+    border-top: 1px solid $color-elements;
+    display: flex;
+  }
+
+  &__button {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

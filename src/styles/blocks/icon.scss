@@ -1,0 +1,69 @@
+.icon {
+  width: 64px;
+  height: 100%;
+  position: relative;
+  display: block;
+  box-shadow: -1px 0 0 0 $color-elements;
+  @include iconsBackground;
+  text-decoration: none;
+  z-index: 1;
+  @include hover(background-size, 24px 24px);
+
+  @include onMediumScreen {
+    width: 48px;
+  }
+
+  &--favourites {
+    background-image: url(../../assets/icons/favourites.svg);
+    @include onSmallScreen {
+      width: 50%;
+    }
+  }
+
+  &--cart {
+    background-image: url(../../assets/icons/cart.svg);
+    @include onSmallScreen {
+      width: 50%;
+    }
+  }
+
+  &--menu {
+    background-image: url(../../assets/icons/menu.svg);
+  }
+
+  &--close {
+    background-image: url(../../assets/icons/close.svg);
+    @include hover(background-image, url(../../assets/icons/close-light.svg));
+  }
+
+  &--search {
+    background-image: url("../../assets/icons/search.svg");
+    box-shadow: none;
+    display: none;
+
+    @include onMediumScreen {
+      display: block;
+    }
+  }
+
+  &--active {
+    border-bottom: 3px solid $color-primary;
+  }
+
+  &__quantity {
+    border: 1px solid $color-white;
+    @include square(14px);
+    border-radius: 50%;
+    font-family: "Mont-SemiBold", sans-serif;
+    font-size: 9px;
+    color: $color-white;
+    background-color: $color-red;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}

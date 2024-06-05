@@ -1,0 +1,103 @@
+@import "../../styles/utils";
+@import "../../styles/blocks/icon";
+
+.header {
+  height: 64px;
+  padding-left: 24px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-white;
+  box-shadow: 0 1px 0 0 $color-elements;
+  z-index: 130;
+
+  @include onMediumScreen {
+    height: 48px;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    &--left {
+      gap: 48px;
+
+      @include onMediumScreen {
+        gap: 32px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onMediumScreen {
+      width: 64px;
+    }
+  }
+
+  &__nav {
+    @include onSmallScreen {
+      display: none;
+    }
+  }
+
+  &__buttons-desktop {
+    display: flex;
+    @include onSmallScreen {
+      display: none;
+    }
+  }
+
+  &__buttons-mobile {
+    display: none;
+    @include onSmallScreen {
+      display: flex;
+    }
+  }
+}
+
+.search {
+  @include onMediumScreen {
+    display: none;
+  }
+
+  &--small {
+    @include onLargeScreen {
+      display: none;
+    }
+    
+    @include onMediumScreen {
+      display: block;
+      position: absolute;
+      top: 49px;
+      right: 0;
+      box-shadow: 0 1px 0 0 $color-elements;
+    }
+  }
+}
+
+.search-small-enter {
+  max-height: 0;
+}
+
+.search-small-enter-active {
+  overflow: hidden;
+  max-height: 64px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.search-small-exit {
+  max-height: 64px;
+}
+
+.search-small-exit-active {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}

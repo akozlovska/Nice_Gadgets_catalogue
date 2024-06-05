@@ -1,0 +1,13 @@
+.FilterDropdowns {
+  &__dropdown {
+    &--sort {
+      width: 176px;
+      z-index: 120;
+    }
+
+    &--page {
+      width: 128px;
+      z-index: 100;
+    }
+  }
+}

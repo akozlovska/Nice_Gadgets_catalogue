@@ -1,0 +1,36 @@
+@mixin hover($_property, $_toValue) {
+  transition: all 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin iconsBackground {
+  background-color: inherit;
+  background-position: center;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+@mixin onSmallScreen {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin onMediumScreen {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

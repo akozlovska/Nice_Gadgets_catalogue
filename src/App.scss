@@ -1,3 +1,33 @@
-.starter {
-  font-size: 18px;
+@import "./styles/utils";
+@import "./styles/blocks/button";
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-block: 24px 80px;
+  flex-grow: 1;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 1136px;
+
+
+  @include onSmallScreen {
+    padding-inline: 16px;
+  }
+
+  @include onMediumScreen {
+    padding-inline: 24px;
+  }
+
+  @include onLargeScreen {
+    padding-inline: 32px;
+    margin: 0 auto;
+  }
 }

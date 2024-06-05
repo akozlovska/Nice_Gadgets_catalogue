@@ -1,0 +1,75 @@
+@import "../../styles/utils";
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+
+  &--active {
+    opacity: 1;
+    pointer-events: all;
+    overflow: hidden;
+  }
+
+  &__text {
+    @include onSmallScreen {
+      font-size: 18px;
+    }
+  }
+
+  &__content {
+    padding: 24px;
+    border: 1px solid $color-elements;
+    width: 368px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: $color-white;
+    z-index: 160;
+
+    @include onSmallScreen {
+      width: 250px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 50%;
+    height: 36px;
+    flex-shrink: 0;
+    background-color: $color-primary;
+    color: $color-white;
+    @include text-buttons;
+    @include hover(box-shadow, 0 3px 13px 0 rgba(23, 32, 49, 0.26));
+    @include onSmallScreen {
+      width: 40%;
+      height: 30px;
+    }
+  }
+
+  &__close {
+    border: none;
+    display: block;
+    @include square(16px);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-image: url(../../assets/icons/close.svg);
+    @include iconsBackground;
+  }
+}

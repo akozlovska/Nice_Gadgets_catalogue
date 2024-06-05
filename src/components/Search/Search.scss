@@ -1,0 +1,58 @@
+@import "../../styles/utils";
+
+.Search {
+  position: relative;
+
+  &__input {
+    padding: 0 0 0 24px;
+    width: 327px;
+    height: 64px;
+    box-shadow: -1px 0 0 0 $color-elements;
+    border: none;
+    outline: none;
+    color: $color-primary;
+    @include text-buttons;
+
+    @include onSmallScreen {
+      width: 100vw;
+      height: 48px;
+      font-size: 12px;
+    }
+
+    &:focus {
+      background-color: $color-hover;
+    }
+
+    &::placeholder {
+      color: $color-icons;
+    }
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    @include square(16px);
+    @include iconsBackground;
+
+    @include onSmallScreen {
+      top: 16px;
+    }
+
+    &--search {
+      background-image: url("../../assets/icons/search.svg");
+
+      @include onSmallScreen {
+        display: none;
+      }
+    }
+
+    &--close {
+      border: none;
+      padding: 0;
+      background-image: url("../../assets/icons/close.svg");
+      cursor: pointer;
+    }
+  }
+}
