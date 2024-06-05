@@ -12,7 +12,7 @@
 
 ## Demo and Mockup
 
-- <a href="https://akozlovska.github.io/Nice_Gadgets_store/" target="_blank">Live Demo</a>
+- <a href="https://akozlovska.github.io/Nice_Gadgets_catalogue/" target="_blank">Live Demo</a>
 - <a href="https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original" target="_blank">Mockup</a>
 
 ## Tech Stack
@@ -41,7 +41,7 @@
   <summary>Setup Instructions</summary>
   <ol>
     <li>Clone the repository
-      <pre><code>git clone https://github.com/akozlovska/Nice_Gadgets_store.git</code></pre>
+      <pre><code>git clone https://github.com/akozlovska/Nice_Gadgets_catalogue.git</code></pre>
     </li>
     <li>Navigate to the project directory
       <pre><code>cd Nice_Gadgets_catalogue</code></pre>
